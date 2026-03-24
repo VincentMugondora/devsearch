@@ -4,5 +4,5 @@ from django.http import HttpResponse
 def getProjectsPage(request):
     return render(request, 'projects.html')
 
-def project(reques, pk):
-    return render(request, 'project.html')
+def project(request, pk):
+    return render(request, 'single-project.html')
