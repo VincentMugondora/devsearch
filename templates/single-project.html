@@ -1,1 +1,46 @@
-<h1>Single Project Template</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Details</title>
+</head>
+<body>
+
+{% comment %} <div id="navbar"></div> {% endcomment %}
+
+<section class="project-detail">
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="project">
+    <div class="content">
+      <h2>Business Website Project</h2>
+      <p>This project involved designing and developing a modern responsive website for a client. It focuses on performance, user experience, and clean design.</p>
+      <ul>
+        <li>Responsive Design</li>
+        <li>SEO Optimized</li>
+        <li>Fast Loading Speed</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+fetch('navbar.html').then(res => res.text()).then(data => {
+  document.getElementById('navbar').innerHTML = data;
+});
+</script>
+
+</body>
+</html>
+
+<style>
+.project-detail { padding:40px; }
+.project-detail .container { max-width:1000px; margin:auto; display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.project-detail img { width:100%; border-radius:10px; }
+.project-detail .content h2 { margin-top:0; }
+.project-detail ul { padding-left:20px; }
+
+@media(max-width:768px) {
+  .project-detail .container { grid-template-columns:1fr; }
+}
+</style>

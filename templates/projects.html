@@ -1,2 +1,61 @@
-<h1>Projects Template</h1>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+</head>
+<body>
+
+{% comment %} <div id="navbar"></div> {% endcomment %}
+
+<section class="projects">
+  <div class="container">
+    <h2>Our Projects</h2>
+    <div class="grid">
+        <a href="single-project.html">View Project</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="project">
+      <div class="card-content">
+        <h3>E-commerce Platform</h3>
+        <p>Complete online store with payment integration.</p>
+        <a href="single-project.html">View Project</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="project">
+      <div class="card-content">
+        <h3>Mobile App</h3>
+        <p>Custom mobile solution for customer engagement.</p>
+        <a href="single-project.html">View Project</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+fetch('navbar.html').then(res => res.text()).then(data => {
+  document.getElementById('navbar').innerHTML = data;
+});
+</script>
+
+</body>
+</html>
+
+<style>
+.projects { padding:40px; text-align:center; }
+.projects h2 { margin-bottom:30px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+.card { background:#fff; border:1px solid #eee; border-radius:10px; overflow:hidden; transition:0.3s; }
+.card:hover { transform:translateY(-5px); }
+.card img { width:100%; height:200px; object-fit:cover; }
+.card-content { padding:15px; text-align:left; }
+.card-content h3 { margin:0 0 10px; }
+.card-content p { font-size:14px; color:#666; }
+.card-content a { display:inline-block; margin-top:10px; text-decoration:none; color:#000; font-weight:bold; }
+</style>
